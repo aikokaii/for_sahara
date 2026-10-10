@@ -3,7 +3,6 @@ import { play, buzz } from "./sfx.js";
 
 const HEART4 = '<svg viewBox="0 0 200 190"><path pathLength="100" d="M18 178C50 192 90 190 100 165C40 120 10 85 10 55C10 28 32 12 55 12C75 12 92 24 100 40C108 24 125 12 145 12C168 12 190 28 190 55C190 85 160 120 100 165C110 190 150 192 182 178"/></svg>';
 
-// lilin yang sudah ditiup tetap mati walau pindah halaman lalu balik lagi
 const blown = new Set();
 
 export function mount(root) {

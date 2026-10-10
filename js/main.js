@@ -33,6 +33,7 @@ const PAGES = {
 const PRELOAD = [1, 2, 3, 4, 5, 6, 7].map(n => `/assets/foto${n}.webp`);
 
 const app = document.getElementById("app");
+const secret = document.querySelector(".secret");
 const wait = ms => new Promise(r => setTimeout(r, ms));
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const num = () => Number(location.hash.slice(2)) || 1;
@@ -90,6 +91,11 @@ function swap(n) {
   document.body.dataset.page = n;
   scrollTo(0, 0);
   cleanup = p.mount(app);
+
+  const foot = app.querySelector(".bunting.foot");
+  secret.classList.toggle("on-foot", !!foot);
+  if (foot) foot.before(secret);
+  else document.body.appendChild(secret);
 
   if (n > 1) {
     const b = document.createElement("button");

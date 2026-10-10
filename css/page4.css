@@ -13,7 +13,6 @@
 
 .headline { margin-bottom: 6px; }
 
-/* lampu mati: .night menutupi halaman, kue + teks tetap di atasnya */
 .wrap { z-index: auto; }
 .headline, .cake, .hint, .cake-actions { position: relative; z-index: 4; }
 .night {

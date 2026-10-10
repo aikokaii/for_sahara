@@ -39,7 +39,6 @@ export function mount(root, heart = HEART) {
   for (let i = 0; i < 14; i++)
     add(deco, "spark", `left:${rand(2, 96)}%;top:${rand(4, 94)}%;font-size:${rand(10, 22)}px;--delay:-${rand(0, 4)}s;color:${pick(BLUES)}`, "✦");
 
-  // bubble muncul satu-satu, didahului "sedang mengetik..."
   const queue = [];
   let typing = false;
   const type = () => {

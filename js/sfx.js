@@ -47,29 +47,23 @@ function hiss(t, dur, peak, type, f0, f1, q = 1, attack = 0.005) {
 }
 
 const SOUNDS = {
-  // balon pecah
   pop(t) {
     hiss(t, 0.18, 0.9, "highpass", 900, 0, 0.7, 0.002);
     tone("sine", 180, 50, t, 0.12, 0.7, 0.002);
   },
-  // balon dipencet
   squeak(t) {
     tone("triangle", 520 + Math.random() * 80, 820, t, 0.12, 0.18);
   },
-  // lilin ditiup
   whoosh(t) {
     hiss(t, 0.4, 0.35, "bandpass", 2200, 500, 0.9, 0.06);
   },
-  // jawaban benar / voucher kebuka
   chime(t) {
     [1046.5, 1318.5, 1568, 2093].forEach((f, i) => tone("sine", f, 0, t + i * 0.07, 0.6, 0.16, 0.005));
   },
-  // saklar lampu
   click(t) {
     hiss(t, 0.02, 0.5, "highpass", 2500, 0, 0.7, 0.001);
     tone("square", 140, 60, t, 0.03, 0.12, 0.001);
   },
-  // tombol kabur
   zip(t) {
     tone("sine", 380, 1300, t, 0.16, 0.15);
   },
